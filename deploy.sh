@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_USERNAME="hrk84ya"
+DOCKER_USERNAME="YOUR-DOCKER-USERNAME"
 
 docker build -t $DOCKER_USERNAME/expense-tracker-backend:latest -f Dockerfile.backend .
 docker push $DOCKER_USERNAME/expense-tracker-backend:latest
