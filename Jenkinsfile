@@ -7,6 +7,11 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Docker version'){
+            steps{
+                sh 'docker --version'
+            }
+        }
         stage('Backend Image'){
             steps{
                 sh 'docker build -t hrk84ya/expense-tracker-backend:latest -f Dockerfile.backend .'
