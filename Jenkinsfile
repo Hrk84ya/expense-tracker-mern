@@ -41,11 +41,6 @@ pipeline {
                 sh 'kubectl apply -f k8s/ingress.yaml'
             }
         }
-        stage('Minikube Dashboard'){
-            steps{
-                sh 'minikube dashboard'
-            }
-        }
         stage('Minikube Service'){
             steps{
                 sh 'minikube service frontend --url'
