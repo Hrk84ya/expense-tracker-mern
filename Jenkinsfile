@@ -42,7 +42,9 @@ pipeline {
         }
         stage('Minikube Service'){
             steps{
-                sh 'minikube service frontend --url'
+                timeout(time: 45, unit: 'SECONDS') {
+                    sh 'minikube service frontend --url'
+                }
             }
         }
     }
