@@ -29,7 +29,6 @@ pipeline {
             steps{
                 sh 'minikube start'
                 sh 'minikube addons enable ingress'
-                sh 'minikube addons enable dashboard'
             }
         }
         stage('Deploy'){
