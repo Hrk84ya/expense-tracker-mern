@@ -1,17 +1,11 @@
 pipeline {
-    agent {
-        docker {
-            image 'docker:latest'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
-        }
+    agent any
+    
+    environment {
+        PATH = "/usr/local/bin:/usr/bin:/bin:${env.PATH}"
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
         stage('Docker version'){
             steps{
                 sh 'docker --version'
