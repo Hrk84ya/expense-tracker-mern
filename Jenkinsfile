@@ -25,12 +25,6 @@ pipeline {
                 }
             }
         }
-        stage('Minikube Implementation'){
-            steps{
-                sh 'minikube start'
-                sh 'minikube addons enable ingress'
-            }
-        }
         stage('Deploy'){
             steps{
                 sh 'kubectl apply -f k8s/mongodb-deployment.yaml'
