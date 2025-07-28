@@ -28,6 +28,7 @@ pipeline {
         stage('Deploy'){
             steps{
                 sh 'kubectl delete pods --all -n default'
+                sh 'sleep 20'
                 sh 'kubectl apply -f k8s/mongodb-deployment.yaml'
                 sh 'kubectl apply -f k8s/backend-config.yaml'
                 sh 'kubectl apply -f k8s/backend-deployment.yaml'
