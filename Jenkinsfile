@@ -36,7 +36,7 @@ pipeline {
         }
         stage('Minikube Service'){
             steps{
-                    sh 'minikube service frontend --url'
+                    sh 'minikube service frontend --url --wait=false'
             }
         }
     }
